@@ -1,0 +1,63 @@
+2. PRUEBA TEORICO-PRACTICA
+
+2.1. Elabore un diagrama de componentes de la aplicación. Debe cargar el archivo en la siguiente ruta del repositorio: ./assets/diagrama.png
+
+RTA: El diagrama se encuentra anexado a la prueba, con el nombre 'diagrama.png' 
+
+2.2. ¿Qué mecanismos de seguridad incluirías en la aplicación para garantizar la protección del acceso a los datos?
+
+RTA: Los mecanismos de seguridad que se incluirían en la palicación son los siguientes:
+-un factor de doble autenticación
+-limitar el acceso a la base de datos 
+-incriptación de contraseñas y una contraseña robusta
+-auditorias en base de datos
+-entregar usuario y contraseña por persona que tendrá acceso a la base de datos
+-necesario el uso de vpn
+-copia de seguridad
+
+2.3. ¿Qué estrategia de escalabilidad recomendarías para la aplicación considerando que el crecimiento proyectado será de 1,000,000 de clientes por año?
+
+RTA: Las estrategias de escalabilidad para el crecimiento del proyecto sería manejar el aplicativo en la nube, las bases de datos tener un monitoreo
+cada periodo de tiempo predeterminado para así revisar su almacenamiento y realizar la implementación de microservicios y docker
+
+2.4. ¿Qué patrón o patrones de diseño recomendarías para esta solución y cómo se implementarían? (Justifique)
+
+RTA: Los patrones de diseños los cuales recomendaría, es principalmente el manejo del aplicativo en aws o nube, un monitoreo periodico de la base de datos
+y la implementación de los microservicios
+
+2.5. ¿Qué recomendaciones harías para optimizar el manejo y la persistencia de datos de la aplicación, teniendo en cuenta que esta aplicación tiene una alta transaccionalidad?
+
+RTA: Las recomendaciones para la persistencia de los datos del aplicativo son las siguiente:
+-partiones de base de datos
+-implementar el uso de mongDB
+-monitoreo de base de datos
+-realizar depuraciones cada periodo de tiempo
+
+3. Redes
+
+3.1. Explica la diferencia entre un router y un switch. ¿Cuándo usarías cada uno? 
+
+RTA: La diferencia entre un router a un switch, es que el router se usa para realizar las conexiones de diferentes redes entre si 
+y el switch se usa para conectar diferentes dispositivos de una misma red; el uso que el cual le daría al router es para realizar mi conoxión
+ de red local a otro tipo de red como la LAN, y el uso que le daría a el switch es para conocectar compuadoras y una impresora que se encuentran en la misma red
+ 
+3.2. Describe las siete capas del modelo OSI y menciona brevemente la función principal de cada una
+
+RTA:
+1. Capa fisica: transmisión de datos por medio fisico
+2. Capa de enlace de datos: se conectan dos o mas dispositivos por medio de una red
+3. Capa de red: de termina la red en la cual se conectarán los dispositivos
+
+
+3.3. Explica las diferencias entre los protocolos TCP y UDP. Dar un ejemplo de cuándo usarías cada uno?
+
+RTA: La diferencia entre los protocolos TCP y UDP es la eficiencia al momento de invocar la información, ambos protocolos los usuarios para el monitoreo de dispositivos,
+principalmente el protocolo UDP el cual es mas rapido en comparación a el TCP
+
+3.4. ¿Qué es una máscara de subred y cómo se utiliza para dividir una red en subredes más pequeñas?
+
+RTA: Una mascara de subred, es una red de IPv4 la cual ya fue dividida en en otras redes mas pequeñas
+
+3.5. ¿Puedes mencionar algunos protocolos de enrutamiento dinámico y explicar brevemente cómo funcionan?
+
+RTA:

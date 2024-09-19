@@ -1,0 +1,37 @@
+services:
+  api:
+    build: ./api/celsia-test
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/celsia-test
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    networks:
+      - prueba-net
+    depends_on:
+      - db
+
+  webapp:
+    build: ./webapp
+    ports:
+      - "3000:3000"
+    networks:
+      - prueba-net
+    depends_on:
+      - api
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: celsia-test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    networks:
+      - prueba-net
+
+networks:
+  prueba-net:
+    driver: bridge

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cliente</title>
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+    <h1>Crear Cliente</h1>
+    <div class="container-form">
+        <form action="/create" method="post">
+            <label for="identification">Identificacion:</label>
+            <input type="text" id="identification" name="identification" pattern="[0-9]+" maxlength="20" required><br>
+            <label for="identificationType">Tipo documento:</label>
+            <!-- Change input to select with predefined options -->
+            <select id="identificationType" name="identificationType" required>
+                <option value="CC">CEDULA</option>
+                <option value="TI">TARJETA IDENTIDAD</option>
+                <option value="CE">CEDULA EXTRANJERIA</option>
+                <option value="RC">REGISTRO CIVIL</option>
+            </select><br>
+            <label for="name">Nombres:</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z]+" maxlength="80" required><br>
+            <label for="lastName">Apellidos:</label>
+            <input type="text" id="lastName" name="lastName" pattern="[A-Za-z]+" maxlength="80" required><br>
+            <label for="birthDate">Fecha nacimiento:</label>
+            <input type="date" id="birthDate" name="birthDate" required><br>
+            <label for="cellphone">Celular:</label>
+            <input type="text" id="cellphone" name="cellphone" pattern="[0-9]+" maxlength="20" required><br>
+            <label for="email">Correo:</label>
+            <input type="text" id="email" name="email" maxlength="80" required><br>
+            <button class="create" type="submit">Crear</button>
+        </form>
+        <button class="cancel" onclick="window.location.href='/'">Cancelar</button>
+    </div>
+</body>
+</html>

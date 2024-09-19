@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script>
+        // Function to filter the table based on the search query
+        function searchClient() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const tableRows = document.querySelectorAll('tbody tr');
+
+            tableRows.forEach(row => {
+                const identification = row.querySelector('td:first-child').textContent.toLowerCase();
+                row.style.display = identification.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Clientes</h1>
+    
+    <div class="search-container">
+        <button class="create" onclick="window.location.href='/create'">Crear Cliente</button>
+        <input type="text" id="searchInput" placeholder="Buscar por identificación..." onkeyup="searchClient()">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Identificacion</th>
+                <th>Tipo documento</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Fecha nacimiento</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Servicios</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% clients.forEach(client => { %>
+                <tr>
+                    <td><%= client.identification %></td>
+                    <td><%= client.identificationType %></td>
+                    <td><%= client.name %></td>
+                    <td><%= client.lastName %></td>
+                    <td><%= client.birthDate %></td>
+                    <td><%= client.cellphone %></td>
+                    <td><%= client.email %></td>
+                    <td>
+                        <button class="services" onclick="window.location.href='/services/<%= client.identification %>'">Servicios</button>
+                    </td>
+                    <td>
+                        <button class="edit" onclick="window.location.href='/edit/<%= client.identification %>'">Editar</button>
+                        <form action="/delete/<%= client.identification %>" method="post" style="display:inline;">
+                            <button class="delete" type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

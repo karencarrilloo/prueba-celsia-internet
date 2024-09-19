@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Servicio</title>
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+<body>
+    <h1>Agregar Servicio</h1>
+    <div class="container-form">
+        <form action="/createService/<%= identification %>" method="post">
+            <label for="identification">Identificacion:</label>
+            <input type="text" id="identification" name="identification" value="<%= identification %>" readonly required><br>
+            <label for="service">Servicio:</label>
+            <!-- Change input to select with predefined options -->
+            <select id="service" name="service" required>
+                <option value="Internet 200 MB">Internet 200 MB</option>
+                <option value="Internet 400 MB">Internet 400 MB</option>
+                <option value="Internet 600 MB">Internet 600 MB</option>
+                <option value="Directv Go">Directv Go</option>
+                <option value="Paramount+">Paramount+</option>
+                <option value="Win+">Win+</option>
+            </select><br>
+            <label for="startDate">Fecha inicio:</label>
+            <input type="date" id="startDate" name="startDate" required><br>
+            <label for="lastBilling">Ultima facturacion:</label>
+            <input type="date" id="lastBilling" name="lastBilling" required><br>
+            <label for="lastPay">Ultimo pago:</label>
+            <input type="text" id="lastPay" name="lastPay" pattern="[0-9]+" maxlength=9" required><br>
+            <button class="create" type="submit">Agregar</button>
+        </form>
+        <button class="cancel" onclick="window.location.href='/services/<%= identification %>'">Cancelar</button>
+    </div>
+</body>
+</html>

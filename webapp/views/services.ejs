@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="/css/services.css">
+</head>
+<body>
+    <h1>Servicios</h1>
+    <button class="create" onclick="window.location.href='/createService/<%= idClient %>'">Agregar Servicio</button>
+    <button class="create" onclick="window.location.href='/'">Volver</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Identificacion</th>
+                <th>Servicio</th>
+                <th>Fecha Inicio</th>
+                <th>Ultima Facturacion</th>
+                <th>Ultimo Pago</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% services.forEach(service => { %>
+                <tr>
+                    <td><%= service.identification %></td>
+                    <td><%= service.service %></td>
+                    <td><%= service.startDate %></td>
+                    <td><%= service.lastBilling %></td>
+                    <td><%= service.lastPay %></td>
+                    <td>
+                        <form action="/deleteService/<%= service.identification %>" method="post" style="display:inline;">
+                            <button class="delete" type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
